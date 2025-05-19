@@ -6,6 +6,14 @@
 # coefficient of friction, and normal force.
 
 
+# Define a function to calculate the
+# resulting frictional force.
+def calculate_friction(friction_coefficient, normal_force):
+    # Simply return the product of the friction
+    # coefficient and the normal force.
+    return friction_coefficient * normal_force
+
+
 # Define the main function.
 def main():
     pass
