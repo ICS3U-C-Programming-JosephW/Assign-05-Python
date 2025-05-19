@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 # Created By: Joseph Wondimagnehu
-# Date: Month Day, Year
-# Add something.
+# Date: May 19, 2025
+# This program calculates the static or
+# kinetic friction given the friction type,
+# coefficient of friction, and normal force.
 
 
 # Define the main function.
