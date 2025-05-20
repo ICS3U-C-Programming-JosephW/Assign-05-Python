@@ -106,7 +106,7 @@ def main():
                             break
                     # Runs if float() cannot convert the user's
                     # normal force input into a float.
-                    except:
+                    except ValueError:
                         # Notify the user that they entered an
                         # invalid number for the normal force.
                         print(
@@ -117,7 +117,7 @@ def main():
                 break
         # Runs if float() cannot convert the user's
         # friction coefficient input into a float.
-        except:
+        except ValueError:
             # Notify the user that they entered an invalid
             # number for the friction coefficient.
             print(
