@@ -136,7 +136,7 @@ def main():
     print(
         f"\n{constants.DARK_GRAY}The resulting "
         f"{constants.FRICTION_INFO[user_frict_type.lower()]} "
-        f"is {friction_result:.2f} N.{constants.WHITE}\n"
+        f"is {friction_result:.2f} N.{constants.WHITE}"
     )
 
 
