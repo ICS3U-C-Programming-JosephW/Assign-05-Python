@@ -21,7 +21,7 @@ def main():
     # Display the greeting message to the user.
     print(
         f"\n{constants.LIGHT_GREEN}Hello, user! This program will calculate the frictional "
-        f"force based on the entered static or kinetic coefficient of friction and normal force."
+        f"force based on\nthe entered static or kinetic coefficient of friction and normal force."
         f"{constants.WHITE}\n"
     )
 
