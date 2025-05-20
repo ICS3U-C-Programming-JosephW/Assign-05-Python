@@ -28,7 +28,54 @@ def main():
     while True:
         # Get the friction type from the user,
         # which can be static or kinetic.
-        user_frict_type = input("Enter the friction type (static or kinetic): ")
+        user_frict_type = input(f"{constants.LIGHT_BLUE}Enter the "
+        f"friction type (static or kinetic): {constants.WHITE}")
+
+        # Check if the user entered static or
+        # kinetic, regardless of letter case.
+        if ((user_frict_type.lower() == "static") or
+        (user_frict_type.lower() == "kinetic")):
+            # Break out of the infinite loop
+            # to simulate a do..while loop.
+            break
+        else:
+            # Otherwise, notify the user that they entered an
+            # unrecognized friction type and that they must try again.
+            print(f"\n{constants.LIGHT_RED}{user_frict_type} is not a recognized "
+            f"type of friction. Please try again.{constants.WHITE}\n")
+    
+    # Construct another infinite while loop.
+    while True:
+        # Get the friction coefficient from the user as a string.
+        user_frict_coefficient_str = input(f"\n{constants.LIGHT_BLUE}"
+        f"Enter the coefficient of friction (dimensionless): {constants.WHITE}")
+
+        # Try to validate and proceed with the user input.
+        try:
+            # Attempt to convert the entered string into a float.
+            user_frict_coefficient_float = float(user_frict_coefficient_str)
+
+            # Check if the friction coefficient float is negative.
+            if (user_frict_coefficient_float < 0):
+                # Notify the user that the coefficient of friction
+                # cannot be negative and that they must try again.
+                print(f"\n{constants.LIGHT_RED}{user_frict_type}Coefficient of "
+                f"friction cannot be negative. Please try again.{constants.WHITE}")
+            # Otherwise, nest another while loop.
+            else:
+                # Construct another infinite while loop.
+                while True:
+                    # Get the friction coefficient from the user as a string.
+                    user_normal_force_str = input(f"\n{constants.LIGHT_PURPLE}"
+                    f"Enter the normal force (N): {constants.WHITE}")
+        except:
+            pass
+
+
+                
+                
+
+
 
 
 # Check if the special name of the file is __main__.
