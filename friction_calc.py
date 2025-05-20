@@ -50,7 +50,7 @@ def main():
         user_frict_coefficient_str = input(f"\n{constants.LIGHT_BLUE}"
         f"Enter the coefficient of friction (dimensionless): {constants.WHITE}")
 
-        # Try to validate and proceed with the user input.
+        # Try to validate and proceed with the friction coefficient input.
         try:
             # Attempt to convert the entered string into a float.
             user_frict_coefficient_float = float(user_frict_coefficient_str)
@@ -59,25 +59,55 @@ def main():
             if (user_frict_coefficient_float < 0):
                 # Notify the user that the coefficient of friction
                 # cannot be negative and that they must try again.
-                print(f"\n{constants.LIGHT_RED}{user_frict_type}Coefficient of "
-                f"friction cannot be negative. Please try again.{constants.WHITE}")
-            # Otherwise, nest another while loop.
+                print(f"\n{constants.LIGHT_RED}Coefficient of friction "
+                f"cannot be negative. Please try again.{constants.WHITE}")
+            # Otherwise, the friction coefficient is positive.
             else:
-                # Construct another infinite while loop.
+                # Nest another infinite while loop for the successive input.
                 while True:
-                    # Get the friction coefficient from the user as a string.
+                    # Get the normal force from the user as a string.
                     user_normal_force_str = input(f"\n{constants.LIGHT_PURPLE}"
                     f"Enter the normal force (N): {constants.WHITE}")
+
+                    # Try to validate and proceed with the normal force input.
+                    try:
+                        # Attempt to convert the entered string into a float.
+                        user_normal_force_float = float(user_frict_coefficient_str)
+
+                        # Check if the normal force float is negative.
+                        if (user_normal_force_float < 0):
+                            # Notify the user that the normal force cannot
+                            # be negative and that they must try again.
+                            print(f"\n{constants.LIGHT_RED}Normal force cannot "
+                            f"be negative. Please try again.{constants.WHITE}")
+                        # Otherwise, the normal force is positive.
+                        else:
+                            # Break out of the inner infinite while loop.
+                            break
+                    # Runs if float() cannot convert the user's
+                    # normal force input into a float.
+                    except:
+                        # Notify the user that they entered an
+                        # invalid number for the normal force.
+                        print(f"\n{constants.LIGHT_RED}{user_normal_force_str} is "
+                        f"not a valid number. Please try again.{constants.WHITE}")
+                # Break out of the outer infinite while loop.
+                break
+        # Runs if float() cannot convert the user's
+        # friction coefficient input into a float.
         except:
-            pass
+            # Notify the user that they entered an invalid
+            # number for the friction coefficient.
+            print(f"\n{constants.LIGHT_RED}{user_normal_force_str} is "
+            f"not a valid number. Please try again.{constants.WHITE}")
+    
+    # Determine the friction result by assigning it
+    # to the function with the validated user inputs.
+    friction_result = calculate_friction(user_frict_coefficient_float, user_normal_force_float)
+
 
 
                 
-                
-
-
-
-
 # Check if the special name of the file is __main__.
 if __name__ == "__main__":
     # Run the main function if so.
