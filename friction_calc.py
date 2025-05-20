@@ -54,8 +54,8 @@ def main():
     while True:
         # Get the friction coefficient from the user as a string.
         user_frict_coefficient_str = input(
-            f"\n{constants.LIGHT_PURPLE}"
-            f"Enter the coefficient of friction (dimensionless): {constants.WHITE}"
+            f"\n{constants.LIGHT_PURPLE}Enter the coefficient "
+            f"of friction (dimensionless): {constants.WHITE}"
         )
 
         # Try to validate and proceed with the friction coefficient input.
@@ -65,7 +65,9 @@ def main():
 
             # Check if the friction coefficient float is negative. Also, look
             # for the weird -0 exception and assume it is negative for safety.
-            if user_frict_coefficient_float < 0 or user_frict_coefficient_str[0] == "-":
+            if (user_frict_coefficient_float < 0) or (
+                user_frict_coefficient_str[0] == "-"
+            ):
                 # Notify the user that the coefficient of friction
                 # cannot be negative and that they must try again.
                 print(
@@ -78,8 +80,8 @@ def main():
                 while True:
                     # Get the normal force from the user as a string.
                     user_normal_force_str = input(
-                        f"\n{constants.LIGHT_CYAN}"
-                        f"Enter the normal force (N): {constants.WHITE}"
+                        f"\n{constants.LIGHT_CYAN}Enter the "
+                        f"normal force (N): {constants.WHITE}"
                     )
 
                     # Try to validate and proceed with the normal force input.
@@ -87,12 +89,10 @@ def main():
                         # Attempt to convert the entered string into a float.
                         user_normal_force_float = float(user_normal_force_str)
 
-                        # Check if the normal force float is negative. Also, look
-                        # for the weird -0 exception by checking for a minus sign
-                        # in the first character of the number for safety.
-                        if (
-                            user_normal_force_float < 0
-                            or user_normal_force_str[0] == "-"
+                        # Check if the normal force float is negative.
+                        # Look for the same -0 exception for safety.
+                        if (user_normal_force_float < 0) or (
+                            user_normal_force_str[0] == "-"
                         ):
                             # Notify the user that the normal force cannot
                             # be negative and that they must try again.
