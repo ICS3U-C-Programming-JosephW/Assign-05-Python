@@ -74,7 +74,7 @@ def main():
                     f"\n{constants.LIGHT_RED}Coefficient of friction "
                     f"cannot be negative. Please try again.{constants.WHITE}"
                 )
-            # Otherwise, the friction coefficient is positive.
+            # Otherwise, the friction coefficient is non-negative.
             else:
                 # Nest another infinite while loop for the successive input.
                 while True:
@@ -100,7 +100,7 @@ def main():
                                 f"\n{constants.LIGHT_RED}Normal force cannot "
                                 f"be negative. Please try again.{constants.WHITE}"
                             )
-                        # Otherwise, the normal force is positive.
+                        # Otherwise, the normal force is non-negative.
                         else:
                             # Break out of the inner infinite while loop.
                             break
